@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Import common properties for all shipping packages-->
+  <Import Project="../common.props" />
+  
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <!-- NuGet package settings -->
+  <PropertyGroup>
+    <PackageId>Microsoft.DurableTask.SqlServer</PackageId>
+    <Title>Durable Task SQL Provider</Title>
+    <Description>Microsoft SQL service provider for the Durable Task Framework.</Description>
+    <PackageTags>Microsoft;Durable;Task;Orchestration;Workflow;Activity;Reliable;SQL</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts/*.sql" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.DurableTask.Core" Version="2.*" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.0" />
+    <PackageReference Include="SemanticVersion" Version="2.1.0" />
+    <PackageReference Include="System.Threading.Channels" Version="4.7.1" />
+  </ItemGroup>
+
+</Project>
